@@ -116,13 +116,13 @@ def userApproval3 () {
 def promoteQA () {
 	stage 'promoteQA'
 	openshiftTag(srcStream: "app-dev", srcTag: "latest", destStream: "app-dev", destTag: "qaready")
-	openshiftDeploy(depCfg: 'app-qa', namespace: 'aristides', verbose: 'false', waitTime: '10', waitUnit: 'min')
+	openshiftDeploy(depCfg: 'app-qa', namespace: 'rafael-jenkins-integracao', verbose: 'false', waitTime: '10', waitUnit: 'min')
     openshiftVerifyDeployment(deploymentConfig: 'app-qa', verbose: 'false', waitTime: '10', waitUnit: 'min')
 }
 
 def promotePROD () {
 	stage 'promotePROD'
 	openshiftTag(srcStream: "app-dev", srcTag: "latest", destStream: "app-dev", destTag: "prodready")
-	openshiftDeploy(depCfg: 'app-prod', namespace: 'aristides', verbose: 'false', waitTime: '10', waitUnit: 'min')
+	openshiftDeploy(depCfg: 'app-prod', namespace: 'rafael-jenkins-integracao', verbose: 'false', waitTime: '10', waitUnit: 'min')
     openshiftVerifyDeployment(deploymentConfig: 'app-prod', verbose: 'false', waitTime: '10', waitUnit: 'min')
 }
