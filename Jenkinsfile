@@ -64,11 +64,6 @@ def SonarQubeAnalysis () {
 
 def allTests () {
 	parallel (
-		"phpunit" : {
-			node('master') {
-	  			sh "oc exec `oc get pods -l app=app-dev | grep -i running | awk 'END { print \$1 }'` ./vendor/bin/phpunit"
-			}
-		},
 		"Firefox" : {
 			node('master') {
 				sh "echo from Firefox"
