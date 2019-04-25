@@ -98,7 +98,7 @@ def userApproval () {
 def userApproval2 () {
 	stage 'userApproval'
 	try {
-		input message: 'Is this version ready ?', id: 'input1', submitter: 'admin'
+		input message: 'Is this version ready ?', id: 'input1'
 	} catch (err) {
 		error ("Aborted Here2") 
 	}
@@ -107,7 +107,7 @@ def userApproval2 () {
 def userApproval3 () {
 	stage 'userApproval'
 	try {
-		input message: 'Is this version ready ?', id: 'input1', submitter: 'admin'
+		input message: 'Is this version ready ?', id: 'input1'
 	} catch (err) {
 		error ("Aborted Here2") 
 	}
